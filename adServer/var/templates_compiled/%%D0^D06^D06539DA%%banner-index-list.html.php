@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2024-04-04 10:45:25
+<?php /* Smarty version 2.6.18, created on 2024-04-17 22:01:47
          compiled from banner-index-list.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 't', 'banner-index-list.html', 20, false),array('function', 'rv_add_session_token', 'banner-index-list.html', 44, false),array('function', 'ox_column_class', 'banner-index-list.html', 92, false),array('function', 'ox_column_title', 'banner-index-list.html', 93, false),array('function', 'cycle', 'banner-index-list.html', 147, false),array('function', 'ox_banner_icon', 'banner-index-list.html', 158, false),array('function', 'ox_entity_id', 'banner-index-list.html', 162, false),array('function', 'ox_column_updated', 'banner-index-list.html', 165, false),array('function', 'ox_banner_size', 'banner-index-list.html', 195, false),array('modifier', 'count', 'banner-index-list.html', 110, false),array('modifier', 'escape', 'banner-index-list.html', 158, false),)), $this); ?>

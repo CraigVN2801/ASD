@@ -1,30 +1,33 @@
 {*<!--
 
-+---------------------------------------------------------------------------+
-| Revive Adserver                                                           |
-| http://www.revive-adserver.com                                            |
-|                                                                           |
-| Copyright: See the COPYRIGHT.txt file.                                    |
-| License: GPLv2 or later, see the LICENSE.txt file.                        |
-+---------------------------------------------------------------------------+
-
--->*}
-
-{if !empty($aSectionNav)}
-    <div id='thirdLevelNavigation'>
-    <ul class='navigation'>
-    {section name=n loop=$aSectionNav}
-      {if $aSectionNav[n].selected}
-        <li class="active {if $smarty.section.n.first} first{/if}{if $smarty.section.n.last} last{/if}">
-      {else}
-        <li class="passive {if $smarty.section.n.first} first{else}{if $smarty.section.n.last} last{/if}{/if}{if $aSectionNav[$smarty.section.n.index_prev].selected} after-active{/if}">
-      {/if}
-          <div class="left"><div class="right">
-            <a href="{$adminBaseURL}{$aSectionNav[n].filename|escape}" accesskey="{t key=Home}">{$aSectionNav[n].title|escape}</a>
-          </div></div>
-        </li>
-    {/section}
-    </ul></div>
-{/if}
-
+  +---------------------------------------------------------------------------+
+  | Revive Adserver                                                           |
+  | http://www.revive-adserver.com                                            |
+  |                                                                           |
+  | Copyright: See the COPYRIGHT.txt file.                                    |
+  | License: GPLv2 or later, see the LICENSE.txt file.                        |
+  +---------------------------------------------------------------------------+
+  
+  -->*}
+  
+  {if !empty($aSectionNav)}
+      <div id='thirdLevelNavigation' style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+      <ul class='navigation' style="list-style: none; margin: 0; padding: 0;">
+      {section name=n loop=$aSectionNav}
+        {if $aSectionNav[n].selected}
+          <li class="active {if $smarty.section.n.first} first{/if}{if $smarty.section.n.last} last{/if}" style="background-color: #007bff; border-radius: 8px;">
+        {else}
+          <li class="passive {if $smarty.section.n.first} first{else}{if $smarty.section.n.last} last{/if}{/if}{if $aSectionNav[$smarty.section.n.index_prev].selected} after-active{/if}" style="background-color: #e9f4fe; border-radius: 8px;">
+        {/if}
+            <div class="left"><div class="right">
+              <a href="{$adminBaseURL}{$aSectionNav[n].filename|escape}" accesskey="{t key=Home}" style="text-decoration: none; color: inherit; display: block; padding: 15px; position: relative;">
+                {$aSectionNav[n].title|escape}
+                <span class="top" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #ffffff;"></span>
+              </a>
+            </div></div>
+          </li>
+      {/section}
+      </ul></div>
+  {/if}
+  
 

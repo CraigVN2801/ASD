@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2024-04-04 10:44:33
+<?php /* Smarty version 2.6.18, created on 2024-04-20 20:08:35
          compiled from advertiser-index-list.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 't', 'advertiser-index-list.html', 18, false),array('function', 'rv_add_session_token', 'advertiser-index-list.html', 38, false),array('function', 'ox_column_class', 'advertiser-index-list.html', 94, false),array('function', 'ox_column_title', 'advertiser-index-list.html', 95, false),array('function', 'cycle', 'advertiser-index-list.html', 139, false),array('function', 'ox_entity_id', 'advertiser-index-list.html', 150, false),array('function', 'ox_column_updated', 'advertiser-index-list.html', 153, false),array('modifier', 'count', 'advertiser-index-list.html', 106, false),array('modifier', 'escape', 'advertiser-index-list.html', 149, false),)), $this); ?>

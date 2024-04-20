@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2024-04-04 10:47:07
+<?php /* Smarty version 2.6.18, created on 2024-04-20 00:13:13
          compiled from options/hiddencheckbox.html */ ?>
 <input type='hidden' name='<?php echo $this->_tpl_vars['aItem']['name']; ?>
 ' id='<?php echo $this->_tpl_vars['aItem']['name']; ?>

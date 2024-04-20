@@ -1,81 +1,56 @@
 {*<!--
-
-+---------------------------------------------------------------------------+
-| Revive Adserver                                                           |
-| http://www.revive-adserver.com                                            |
-|                                                                           |
-| Copyright: See the COPYRIGHT.txt file.                                    |
-| License: GPLv2 or later, see the LICENSE.txt file.                        |
-+---------------------------------------------------------------------------+
-
--->*}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>{t str=CampaignOverview}</title>
-  <link rel='stylesheet' type='text/css' href='{$assetPath}/css/dashboard-widget.css'>
-  <!--[if IE]>
-      <link rel="stylesheet" type="text/css" href="{$assetPath}/css/dashboard-widget-ie.css" />
-  <![endif]-->
-</head>
-
-<body>
-
-{if $screen == 'enabled'}
-    {if $aCampaign|@count > 0}
-    <div class="widgetContainer widgetListWrapper">
-        <!-- normal view -->
-        <ul class="widgetList campaignList">
-           {foreach from=$aCampaign key=key item=aValue}
-           <li><div class="title">
-              {if $aValue.campaignid != ""}
-                 <a target="_top" href="{$baseUrl}?clientid={$aValue.clientid}&campaignid={$aValue.campaignid}" title="{$aValue.name|escape}">{$aValue.name|escape}</a>
-           	  {else}
-           	     {$aValue.name|escape}
-           	  {/if}
-           	</div><div class="campaign-{$aValue.action}">{$aValue.actionDesc}</div></li>
-            {/foreach}
-        </ul>
-    </div>
-    <div><a class="site-link" target="_top" href="{$siteUrl}">{t str=CampaignGoTo}</a></div>
-    <!-- end of normal view -->
-    {else}
-        {if $hasCampaigns}
-	<!-- no items view  -->
-	<div class="widgetListWrapper widgetContainer">
-	    <ul class="widgetList campaignNoItems">
-	        <li>{t str=CampaignNoDataTimeSpan}</li>
-	    </ul>
-	</div>
-	<div><a class="site-link" target="_top" href="{$siteUrl}">{t str=CampaignSetUp}</a></div>
-	<!-- end of no items view  -->
-	{else}
-    <!-- no campaigns view -->
-    <div class="widgetListWrapper widgetContainer">
-        <ul class="widgetList campaignList">
-            {if $isAdmin == true}
-                {t str=CampaignNoRecordsAdmin}
+    +---------------------------------------------------------------------------+
+    | Revive Adserver                                                           |
+    | http://www.revive-adserver.com                                            |
+    |                                                                           |
+    | Copyright: See the COPYRIGHT.txt file.                                    |
+    | License: GPLv2 or later, see the LICENSE.txt file.                        |
+    +---------------------------------------------------------------------------+
+    -->*}
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{t str=CampaignOverview}</title>
+    </head>
+    <body style="font-family: 'Roboto', sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; color: #333; text-align: center;">
+        <div style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: left;">
+            {% comment %}
+            <h1 style="font-size: 28px; text-align: center; margin-bottom: 20px; color: #007bff;">{t str=CampaignOverview}</h1>
+            {% endcomment %}
+            {if $screen == 'enabled'}
+                {if $aCampaign|@count > 0}
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+                       {foreach from=$aCampaign key=key item=aValue}
+                       <li style="border-bottom: 1px solid #ddd; padding: 20px 0;">
+                          <div style="font-size: 20px; color: #333; text-decoration: none;">
+                              {if $aValue.campaignid != ""}
+                                 <a style="display: inline-block; padding: 10px 20px; font-size: 18px; text-align: center; text-decoration: none; cursor: pointer; border-radius: 5px; background-color: #007bff; color: #fff; border: none; transition: background-color 0.3s ease;" target="_top" href="{$baseUrl}?clientid={$aValue.clientid}&campaignid={$aValue.campaignid}" title="{$aValue.name|escape}" >{$aValue.name|escape}</a>
+                              {else}
+                                 {$aValue.name|escape}
+                              {/if}
+                          </div>
+                          <div style="font-size: 16px; color: #666; margin-top: 8px;">{$aValue.actionDesc}</div>
+                       </li>
+                       {/foreach}
+                    </ul>
+                {else}
+                    {if $hasCampaigns}
+                        <p style="font-size: 18px; color: #666; line-height: 1.6; margin-bottom: 20px;">{t str=CampaignNoDataTimeSpan}</p>
+                    {else}
+                        {if $isAdmin == true}
+                            <p style="font-size: 18px; color: #666; line-height: 1.6; margin-bottom: 20px;">{t str=CampaignNoRecordsAdmin}</p>
+                        {else}
+                            <p style="font-size: 18px; color: #666; line-height: 1.6; margin-bottom: 20px;">{t str=CampaignNoRecords}</p>
+                        {/if}
+                    {/if}
+                {/if}
             {else}
-                {t str=CampaignNoRecords}
+                <p style="font-size: 18px; color: #666; line-height: 1.6; margin-bottom: 20px;">{t str=CampaignAuditNotActivated}</p>
             {/if}
-        </ul>
-    </div>
-    {if $isAdmin != true}
-    <div><a class="site-link" target="_top" href="{$siteUrl}">{t str=CampaignSetUp}</a></div>
-    {/if}
-    <!-- end of no campaigns view -->
-    {/if}
-    {/if}
-{else}
-	<!-- Audit Trail inactive view -->
-	<div class="widgetListWrapper widgetContainer">
-	    <ul class="widgetList campaignAuditNotActivated">
-	       {t str=CampaignAuditNotActivated}
-	    </ul>
-	</div>
-	<div><a class="site-link" target="_top" href="{$siteUrl}">{$siteTitle}</div>
-	<!-- end of Audit Trail inactive view-->
-{/if}
-
-</body>
-</html>
+            <div style="text-align: center;">
+                <a style="display: inline-block; padding: 10px 20px; font-size: 20px; text-decoration: none; cursor: pointer; border-radius: 5px; background-color: #007bff; color: #fff; border: none; transition: background-color 0.3s ease; margin-top: 20px; text-decoration: none;" target="_top" href="{$siteUrl}">{t str=CampaignGoTo}</a>
+            </div>        
+        </div>
+    </body>
+    </html>

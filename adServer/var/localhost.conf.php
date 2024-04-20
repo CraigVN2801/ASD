@@ -31,7 +31,7 @@ socket=
 port=3306
 username=root
 password=
-name=adServer
+name=esdAdserver
 persistent=
 protocol=tcp
 compress=
@@ -50,11 +50,11 @@ statisticsSortBufferSize=
 schema=
 
 [webpath]
-admin="localhost/adserver/www/admin"
-delivery="localhost/adserver/www/delivery"
-deliverySSL="localhost/adserver/www/delivery"
-images="localhost/adserver/www/images"
-imagesSSL="localhost/adserver/www/images"
+admin="localhost/adServer/www/admin"
+delivery="localhost/adServer/www/delivery"
+deliverySSL="localhost/adServer/www/delivery"
+images="localhost/adServer/www/images"
+imagesSSL="localhost/adServer/www/images"
 
 [file]
 asyncjs="asyncjs.php"
@@ -112,7 +112,7 @@ clicktracking=
 ecpmSelectionRate="0.9"
 enableControlOnPureCPM=1
 assetClientCacheExpire=3600
-secret="4VNBiOzFNfQ+K/x5wl21RH40kIyPlT0ZAbAYcCMBWlc="
+secret="nt6BsNZ0HpHQKgff0Ugwd30n9Xl3qGpmTvPnPVZsZus="
 clickUrlValidity=0
 relAttribute="noopener nofollow"
 

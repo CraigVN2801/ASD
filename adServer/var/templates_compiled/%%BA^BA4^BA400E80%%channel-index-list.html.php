@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2024-04-04 10:46:28
+<?php /* Smarty version 2.6.18, created on 2024-04-19 21:08:53
          compiled from channel-index-list.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 't', 'channel-index-list.html', 19, false),array('function', 'rv_add_session_token', 'channel-index-list.html', 41, false),array('function', 'cycle', 'channel-index-list.html', 112, false),array('function', 'ox_entity_id', 'channel-index-list.html', 121, false),array('modifier', 'count', 'channel-index-list.html', 80, false),array('modifier', 'escape', 'channel-index-list.html', 120, false),array('modifier', 'default', 'channel-index-list.html', 125, false),)), $this); ?>

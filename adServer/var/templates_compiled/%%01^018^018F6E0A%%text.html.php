@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2024-04-04 10:47:07
+<?php /* Smarty version 2.6.18, created on 2024-04-20 00:13:13
          compiled from options/text.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'options/text.html', 8, false),)), $this); ?>
